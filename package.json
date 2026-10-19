@@ -1,9 +1,9 @@
 {
   "name": "dsh-plugin-aurora-bg",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
-  "description": "Aurora 背景 UI（桌面端移植版）：毛玻璃表面 + 可自定义背景图 + 主色联动；支持逐表面调节透明度（base/layer/layer2/sidebar/input/button/selector）与背景模糊。",
+  "description": "Aurora 背景 UI（桌面端移植版）：毛玻璃表面 + 自定义背景图 + 主色联动；带可视化面板，可用滑块逐个调节主内容列/卡片/侧栏/输入框等表面的透明度与背景模糊。",
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",

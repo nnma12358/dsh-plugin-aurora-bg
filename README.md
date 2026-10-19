@@ -71,6 +71,45 @@
 改完 `settings.json` 后**刷新页面**即可，不必重启。
 
 
+### 逐个框调节透明度（v1.1 起）
+
+`settings.json` 里除了总开关 `panelAlpha`，还可以用 `alpha` **单独指定每个框**。
+给了哪个就覆盖哪个，没给的仍按 `panelAlpha` 派生。
+
+```jsonc
+{
+  "mode": "custom",
+  "url": "/aurora-bg/asset/bg-default.jpg",
+  "blur": 0,
+  "panelAlpha": 18,                 // 总开关：未在 alpha 里出现的表面按它派生
+  "alpha": {
+    "base":     18,                 // 主内容列（聊天区）  --dsw-alias-bg-base
+    "layer":    40,                 // 卡片 / 面板        --dsw-alias-bg-layer-1
+    "layer2":   34,                 // 次级面板           --dsw-alias-bg-layer-2
+    "sidebar":  11,                 // 侧栏 + 外框（同时决定标题栏那条）
+    "input":    40,                 // 输入框             --dsw-specific-input-major
+    "button":   42,                 // 按钮               --dsw-alias-button-elevated-fill
+    "selector": 42                  // 选中的列表项       --dsw-specific-selector
+  }
+}
+```
+
+| 键 | 对应表面 | 调大 | 调小 |
+|---|---|---|---|
+| `base` | 主内容列 | 文字更清楚，照片更淡 | 照片更透 |
+| `layer` | 卡片/面板 | 卡片更实 | 卡片几乎透明 |
+| `layer2` | 次级面板 | 同上 | 同上 |
+| `sidebar` | 侧栏 + 外框 + 标题栏 | 侧栏更实 | 侧栏全透 |
+| `input` | 输入框 | 输入区更实、更好读 | 更透 |
+| `button` | 按钮 | 按钮更实 | 更透 |
+| `selector` | 选中的会话/列表项 | 更实 | 更透 |
+
+取值范围 **0~95**，数值即「不透明度百分比」，`0` = 全透明、`95` = 几乎不透明。
+
+> **热更新**：改完保存即可，客户端每 4 秒重读一次配置，**不需要刷新页面**。
+> 用界面上的「🎨 背景」改背景图时，`alpha` 会被原样保留，不会被冲掉。
+
+
 ## 四、Windows 自绘标题栏（最小化/最大化/关闭）
 
 那条标题栏**不是网页元素**，是 Electron 的 `titleBarOverlay`。桌面端 preload 里的取值链是：

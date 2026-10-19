@@ -1,0 +1,4 @@
+# Aurora 背景 UI（桌面端移植版）—— 以 bundle 层注册，出现在「已安装插件」里并可整体开关。
+- insert:
+    - id: ui-aurora
+      name: 'dsh-plugin-aurora-bg'

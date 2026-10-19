@@ -1,0 +1,46 @@
+{
+  "name": "dsh-plugin-aurora-bg",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Aurora 背景 UI（桌面端移植版）：毛玻璃表面 + 可自定义背景图 + 主色联动，配色走 theme 令牌覆盖，背景图随包静态注入。",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-connection"
+      ]
+    }
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "author": "nnma12358 (https://github.com/nnma12358)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnma12358/dsh-plugin-aurora-bg.git"
+  },
+  "homepage": "https://github.com/nnma12358/dsh-plugin-aurora-bg#readme",
+  "bugs": {
+    "url": "https://github.com/nnma12358/dsh-plugin-aurora-bg/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness"
+  ]
+}

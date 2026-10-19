@@ -1,0 +1,23 @@
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+payload/out/
+.DS_Store
+*.log
+
+# —— 用户私有内容，绝不入库 ——
+# 背景图与设置属于使用者个人数据（可能是私人照片），只存在 DSH home 里：
+#   <DSH_HOME>/dsh-plugin-aurora-bg/settings.json
+#   <DSH_HOME>/dsh-plugin-aurora-bg/assets/*
+assets/
+settings.json
+bg-*.jpg
+bg-*.jpeg
+bg-*.png
+bg-*.webp
+bg-*.avif
+*.jpg
+*.jpeg
+*.webp
+*.avif
